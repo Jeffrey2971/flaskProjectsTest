@@ -1,0 +1,14 @@
+ul li{
+    width:50px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    border:1px solid orange;
+    margin:1px;
+    padding:2px;
+    float:left;
+
+}
+ul{
+    list-style-type: none;
+}

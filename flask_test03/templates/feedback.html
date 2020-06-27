@@ -1,0 +1,7 @@
+{% extends 'index.html' %}
+
+{% block extCSS %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}">
+
+{% endblock %}

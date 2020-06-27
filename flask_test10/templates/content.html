@@ -1,0 +1,32 @@
+<div id="content">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
+
+    {% macro create_li() %}
+        <li>坚持</li>
+    {% endmacro %}
+
+
+    {% macro create_li_para(page_index) %}
+
+        <li>{{ page_index }}</li>
+
+    {% endmacro %}
+
+    <ul>
+        {% for i in range(1, 21) %}
+            {{ create_li_para(i) }}
+
+        {% endfor %}
+        <p style="clear:both"></p>
+    </ul>
+
+
+{#    <ul>#}
+{#        <li>1</li>#}
+{#        <li>2</li>#}
+{#        <li>3</li>#}
+{#        <li>4</li>#}
+{#        <li>5</li>#}
+{#    </ul>#}
+
+</div>

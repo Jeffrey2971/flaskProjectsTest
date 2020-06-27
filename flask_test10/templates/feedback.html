@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+
+{% block extCSS %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% include 'content.html' %}
+    </div>
+
+    <ol>
+
+        {% for hobbys in hobby %}
+            {% if loop.first %}
+                <li style="color:red;">{{ hobbys|upper }}：{{ loop.revindex0 }}</li>
+            {% elif loop.last %}
+                <li style="color:yellow;">{{ hobbys|lower }}：{{ loop.revindex0 }}</li>
+            {% else %}
+                <li style="color:pink;">{{ hobbys|capitalize|reverse|striptags }}：{{ loop.revindex0 }}</li>
+
+            {% endif %}
+
+        {% endfor %}
+
+
+    <p>
+        {{ make_safe|safe }}
+    </p>
+
+    <p>
+        {{ username|default('Jeffrey') }}
+    </p>
+
+
+    </ol>
+
+
+{% endblock %}
+
+{% block footer %}
+    {% from 'learn_macro.html' import say_hello %}
+    {{ say_hello('Jeffrey') }}
+{% endblock %}
